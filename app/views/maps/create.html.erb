@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title> </title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.slidertron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+
+			<header id="header" class="skel-layers-fixed" style="background-color: #e0555a; color:rgb(209, 242, 245)" >
+			<h1><%= link_to "Transparent India", root_path %></h1>	
+				<nav id="nav">
+					<ul>
+						<li><%= link_to "Home", root_path %></li>
+						<% if user_signed_in? %>
+							<li><%= link_to "Settings", edit_user_registration_path%></li>
+							<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li> 
+						<%else%>
+							<li><%= link_to "Join", new_user_registration_path%></li>
+							<li><%= link_to "Log In", new_user_session_path%></li> 
+						 <% end %>
+					</ul>
+				</nav>
+			</header>
+			
+		<!-- Three -->
+		<br>
+		<br>
+		<br>
+		<br>
+			<section id="three" class="wrapper style2">
+				<div class="container">
+					<header class="major">
+						<h2>OUR TEAM</h2>
+						<p>We are the undergraduates at <a href="http://www.nitk.ac.in/"><strong>National Institute of Technology</strong></a><br />
+						Currently pursuing degree in<a href="http://infotech.nitk.ac.in/">Information technology</a> <br />
+						We are group of three individuals trying to create a difference</p>
+					</header>
+					<br>
+
+					
+					<br>
+					
+					<br>
+					<br>	
+					<div class="row">
+						<div class="4u 6u(2) 12u$(3)">
+							<article class="box post">
+
+								<%= image_tag(("Harsha.jpg"), :class=>"image fit") %>
+
+								<!-- #<image_tag("Harsha.png", alt: "Harsha") %> -->
+								<!-- <a href="#" class="image fit"><img src="images/Harsha.jpg" alt="" /></a> -->
+
+
+								
+							<article class="box post">								
+								<h3>Harshavardhan G</h3>
+								<p>Whatsapp me on <b>*********</b><br>Mail me at <b>*****@****</b></p>
+								<ul class="actions">
+									<li><a href="#" class="button">Learn More</a></li>
+								</ul>
+							</article>
+						</div>
+						<div class="4u 6u$(2) 12u$(3)">
+							<article class="box post">
+								<%= image_tag(("Manas.jpg"), :class=>"image fit") %>
+								<!-- <a href="#" class="image fit"><img src="Manas.jpg" alt="" /></a> -->
+								<h3>Manas Kinkar</h3>
+								<p>Whatsapp me on <b>*********1</b><br>Mail me at <b>*********@**ail.com</b></p>
+								<ul class="actions">
+									<li><a href="https://www.linkedin.com/in/manas-kinkar001/" class="button">Learn More</a></li>
+								</ul>
+							</article>
+						</div>
+						<div class="4u$ 6u(2) 12u$(3)">
+							<article class="box post">
+								<%= image_tag(("Sanjay.jpg"), :class=>"image fit") %>
+								<a href="#" class="image fit"><img src="images/Sanjay.jpg" alt="" /></a>
+								<h3>Sanjay Shetty</h3>
+								<p>Whatsapp me at<br>MAil me at<br></p>
+								<ul class="actions">
+									<li><a href="#" class="button">Learn More</a></li>
+								</ul>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<span class="copyright">
+					&copy; Copyright. All rights reserved. Design by <a href="#">Code busters</a>
+				</span>
+			</footer>
+
+	</body>
+</html>

@@ -1,0 +1,69 @@
+
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <title> </title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+    <!-- <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dropotron.min.js"></script>
+    <script src="js/jquery.scrollgress.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/jquery.slidertron.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script> -->
+    <noscript>
+      <link rel="stylesheet" href="css/skel.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body style="background-color: #DFD4CB">
+
+    <!-- Header -->
+      <header id="header" class="skel-layers-fixed" style="background-color: #e0555a;color: white;">
+      <h1><strong><%= link_to "TRANSPARENT INDIA", root_path %></strong></h1> 
+        <nav id="nav">
+          <ul>
+            <li><%= link_to "HOME", root_path %></li>
+            <li><a href="https://rtionline.gov.in/" class="icon fa-angle-down">RTI</a></li>
+            <li><a href="http://digitalindia.gov.in/">DIGITAL INDIA</a></li>
+          </ul>
+        </nav>
+      </header>
+  </body>
+</html>
+<br>
+<br>  
+
+ <div class="container" style="width: 500px; align-content: center;">
+
+  <% unless @docs.blank? %>
+    <% @pics.each do |pic| %>
+    <a href="<%= (url_for [pic]) %>">
+      <ul class="list-group" style="text-align: center; border: border-all; margin: black ;">
+        <li class="list-group-item border" style="border-style: solid;"><p class="title"><%= link_to pic.title, pic %></p></li>
+        <li class="list-group-item"><p class="date"><%= time_ago_in_words(pic.created_at) %></p></li>      
+        <li class="list-group-item"><p class="domain"><%= truncate(pic.domain, length:50) %></p></li>
+      </ul>
+    </a>
+      <% end %>
+      <div style="text-align: center;">
+        <button type="button" class="btn btn-none btn-md" style="align-items: center;"><%= link_to "Create Doc", new_pic_path%></button>
+      </div>
+  <% else %>
+      <div style="text-align: center;">
+        <button type="button" class="btn btn-none btn-md" style="align-items: center;"><%= link_to "Create Doc", new_pic_path%></button>
+      </div>
+  <%end %>
+
+
+ </div>
+
